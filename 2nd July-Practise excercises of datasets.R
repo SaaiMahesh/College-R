@@ -9,4 +9,4 @@ library(modeest)
 mfv(grades$quiz1) #Mode
 
 
-summary(grades)
+summary(grades) #Summary 
