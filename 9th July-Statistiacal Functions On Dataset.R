@@ -29,5 +29,10 @@ hist(student$Read[student$Gender==0])
 #H1: Mean of math is not 70
 #IMP: IF P VALUE IS <0.05, REJECT NULL HYPOTHESIS. ELSE ACCEPT.
 
-t.test(student$Math, mu = 70)
+t.test(student$Math, mu = 70) #mu is user defined to just check whatever values.
 #Since p < 0.05, we accept alternate hypothesis.
+
+#Welsh two sample test, for one numerical and one categorical variable up-to 2 levels
+t.test(student$Read,student$School)
+boxplot(student$Read~student$School) # ~ is used for "as function of" i.e y~x is y is function of x, here, read becomes function of school to make it comparable which otherwise wont give a good plot
+
