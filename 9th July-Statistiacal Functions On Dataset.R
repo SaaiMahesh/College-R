@@ -1,7 +1,8 @@
 #If skewness of the data lies between -1 and +1 then it is normal data, else it is skewed.
 #It is negatively skewed if the data leans towards left and positively skewed if vice versa.
 #Kurtosis shows the peak of standard deviation between data points and mean.
-#(platykurtic - high peak,mesokurtic- mid peak, lepotokurtic- low or flat peak)
+#(platykurtic - high peak,mesokurtic- mid peak, lepotokurtic- low or flat peak).
+# IMP: USE ~ TO SEPERATE NUMERIC AND CATEGORICAL (1 or more categories) for statistical functions, (use , if its seperate data)
 
 student<-read.csv("students_performance.csv")
 str(student)
@@ -32,10 +33,23 @@ hist(student$Read[student$Gender==0])
 t.test(student$Math, mu = 70) #mu is user defined to just check whatever values.
 #Since p < 0.05, we accept alternate hypothesis.
 
-#Welsh two sample test, for one numerical and one categorical variable up-to 2 levels
-t.test(student$Read,student$School)
-#Since p < 0.05, we accept alternative hypothesis(change in mean between both variables) and reject null hypothesis(no change in mean between both variables)
+View(student)
+str(student)
+table(student$School)
+#Welsh two sample t test (aka independent t test), for one numerical and one categorical data up-to 2 levels
+t.test(student$Read~student$School) #Since p < 0.05, we accept alternative hypothesis(change in mean between both variables) and reject null hypothesis(no change in mean between both variables)
 
 #Boxplot
-boxplot(student$Read~student$School) # ~ is used for "as function of" i.e y~x is y is function of x, here, read becomes function of school to make it comparable which otherwise wont give a good plot
+boxplot(student$Read~student$School) # ~ is used for "as function of" i.e y~x is y is function of x, ~ should be used if there is one numeric and one or more categorical
+
+#Paired t test (aka dependent t test) for both numerical data
+str(student)
+#H0: No difference in mean
+#H1: There is difference in mean
+t.test(student$Read,student$Math,paired=T) # Using , instead of ~ because both are numerical. paired = T means it is paired T test
+#Since p > 0.05, we accept null hypothesis and reject alternative hypothesis i.e no difference in mean. 
+par(mfrow=c(1,1))
+boxplot(student$Read,student$Math,xlab='student read',ylab='math')
+
+
 
