@@ -34,5 +34,8 @@ t.test(student$Math, mu = 70) #mu is user defined to just check whatever values.
 
 #Welsh two sample test, for one numerical and one categorical variable up-to 2 levels
 t.test(student$Read,student$School)
+#Since p < 0.05, we accept alternative hypothesis(change in mean between both variables) and reject null hypothesis(no change in mean between both variables)
+
+#Boxplot
 boxplot(student$Read~student$School) # ~ is used for "as function of" i.e y~x is y is function of x, here, read becomes function of school to make it comparable which otherwise wont give a good plot
 
