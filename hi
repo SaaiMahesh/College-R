@@ -4,3 +4,14 @@ data()
 #Description: The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).
 #Format: A data frame with 32 observations on 11 (numeric) variables.
 summary(mtcars)
+
+#Q2. Is the avg mpg > 25?
+#Statistical hypothesis testing using one sample t test
+#Hypothesis question: Is the average mpg > 25?
+#Null hypothesis(H0): Avg mpg is not > 25
+#Alternative hypothesis(H1): Avg mpg is > 25
+mean(mtcars$mpg)
+skewness(mtcars$mpg) #Checking for skewness to determine if data is normal or not. Since it lies between -1 and +1, the data is not skewed and we can use parametric tests.
+t.test(mtcars$mpg,alternative="greater",mu=25)
+#Since p > 0.05, we accept null hypothesis i.e average mpg(miles per gallon) is not greater than 25.
+
