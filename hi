@@ -10,7 +10,7 @@ summary(mtcars)
 #Hypothesis question: Is the average mpg > 25?
 #Null hypothesis(H0): Avg mpg is not > 25
 #Alternative hypothesis(H1): Avg mpg is > 25
-mean(mtcars$mpg)
+mean(mtcars$mpg) #Checking actual mean
 skewness(mtcars$mpg) #Checking for skewness to determine if data is normal or not. Since it lies between -1 and +1, the data is not skewed and we can use parametric tests.
 t.test(mtcars$mpg,alternative="greater",mu=25)
 #Since p > 0.05, we accept null hypothesis i.e average mpg(miles per gallon) is not greater than 25.
@@ -23,4 +23,5 @@ cor(mtcars$hp,mtcars$mpg) #-0.7761684 -> Strong Negative correlation hence when 
 cor(mtcars$qsec,mtcars$hp) #-0.7082234 -> Strong Negative correlation hence when horse power increases, the quarter mile time decreases and vice versa.
 cor(mtcars$gear,mtcars$hp) #-0.1257043 -> Weak Negative correlation hence when number of forward gears increase, there is a decrease in horsepower and vice versa.
 cor(mtcars$wt,mtcars$mpg) #-0.8676594 -> Strong Negative correlation hence when the car's weight increases, there is a decrease in mileage per gallon and vice versa.
+
 
