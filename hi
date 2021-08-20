@@ -18,7 +18,7 @@ t.test(mtcars$mpg,alternative="greater",mu=25)
 #Since p > 0.05, we accept null hypothesis i.e average mpg(miles per gallon) is not greater than 25.
 
 #Q3. Find the relationship b/w variables
-#Checking six different relationships between variables using correlation between -1 and +1 where lesser as the value goes lesser it has weak relationship and vice versa.
+#Checking six different relationships between variables using correlation between -1 and +1 where lesser as the value gets, the more weaker the relationship gets and vice versa.
 cor(mtcars$mpg,mtcars$cyl) #-0.852162 -> Strong Negative correlation hence when number of cylinders increases, the mileage per gallon decreases and vice versa.
 cor(mtcars$disp,mtcars$hp) #0.7909486 -> Strong Positive correlation hence when horse power increases, the displacement increase and vice versa.
 cor(mtcars$hp,mtcars$mpg) #-0.7761684 -> Strong Negative correlation hence when horse power increases, the mileage decreases and vice versa.
