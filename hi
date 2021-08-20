@@ -55,6 +55,8 @@ boxplot(mtcars$mpg~mtcars$gear,xlab='No. of gears',ylab='Miles per gallon',main=
 boxplot(mtcars$mpg~mtcars$am,xlab='Transmission (0 is automatic and 1 is manual)',ylab='Miles per gallon',main='Effect of transmission on mpg')
 boxplot(mtcars$mpg~mtcars$carb,xlab='No. of carburetors',ylab='Miles per gallon',main='Effect of carburetors on mpg')
 boxplot(mtcars$mpg~mtcars$cyl,xlab='No. of cylinders',ylab='Miles per gallon',main='Effect of cylinders on mpg')
+hist(mtcars$mpg,xlab='Miles per gallon',main='Histogram of frequencies for mpg')
+hist(mtcars$hp,xlab='Horsepower',main='Histogram of frequencies for horsepower')
 plot(mtcars$wt,mtcars$mpg) #Scatterplot between weight and mpg.
 
 
