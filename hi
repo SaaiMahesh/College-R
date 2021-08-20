@@ -24,4 +24,25 @@ cor(mtcars$qsec,mtcars$hp) #-0.7082234 -> Strong Negative correlation hence when
 cor(mtcars$gear,mtcars$hp) #-0.1257043 -> Weak Negative correlation hence when number of forward gears increase, there is a decrease in horsepower and vice versa.
 cor(mtcars$wt,mtcars$mpg) #-0.8676594 -> Strong Negative correlation hence when the car's weight increases, there is a decrease in mileage per gallon and vice versa.
 
+#Q4. Checking statistically if (a) gear (b)am (c) carb have an effect on mpg
+#Using statistical hypothesis testing, we can check if (a,b,c) have an effect on mpg.
 
+#(a)Does gear have an effect on mpg?
+#H0: Gear does not have an effect on mpg.
+#H1: Gear does have an effect on mpg.
+test1<-aov(mtcars$mpg~mtcars$gear) #Anova test since Gear is categorical with more than 2 levels and mpg is numerical variable.
+summary(test1)
+#Since p < 0.05, we accept alternative hypothesis i.e gear has an effect on mpg.
+
+#(b)Does transmission (am) have an effect on mpg?
+#H0: Transmission does not have an effect on mpg.
+#H1: Transmission does have an effect on mpg.
+test2<-t.test(mtcars$mpg~mtcars$am) #Welch two sample t test since am is categorical with upto 2 levels and mpg is numerical variable.
+test2
+
+#(c)Does carb have an effect on mpg?
+#H0: Carb does not have an effect on mpg
+#H1: Carb does have an effect on mpg.
+test3<-aov(mtcars$mpg~mtcars$carb) #Anova test since carb is categorical with more than 2 levels and mpg is numerical variable.
+summary(test3)
+#Since p < 0.05, we accept alternative hypothesis i.e carb does have an effect on mpg.
