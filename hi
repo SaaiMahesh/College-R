@@ -39,6 +39,7 @@ summary(test1)
 #H1: Transmission does have an effect on mpg.
 test2<-t.test(mtcars$mpg~mtcars$am) #Welch two sample t test since am is categorical with upto 2 levels and mpg is numerical variable.
 test2
+#Since p < 0.05, we accept alternative hypothesis i.e transmission does have an effect on mpg.
 
 #(c)Does carb have an effect on mpg?
 #H0: Carb does not have an effect on mpg
