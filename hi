@@ -1,3 +1,5 @@
+#MTCars Data Analysis
+
 #Q1. Summary:
 data()
 #Dataset: Motor Trend Car Road Tests is the dataset that we're working with (mtcars)
@@ -47,3 +49,13 @@ test2
 test3<-aov(mtcars$mpg~mtcars$carb) #Anova test since carb is categorical with more than 2 levels and mpg is numerical variable.
 summary(test3)
 #Since p < 0.05, we accept alternative hypothesis i.e carb does have an effect on mpg.
+
+#Q5. Graphs related to above questions
+boxplot(mtcars$mpg~mtcars$gear,xlab='No. of gears',ylab='Miles per gallon',main='Effect of gears on mpg')
+boxplot(mtcars$mpg~mtcars$am,xlab='Transmission (0 is automatic and 1 is manual)',ylab='Miles per gallon',main='Effect of transmission on mpg')
+boxplot(mtcars$mpg~mtcars$carb,xlab='No. of carburetors',ylab='Miles per gallon',main='Effect of carburetors on mpg')
+
+
+
+
+
