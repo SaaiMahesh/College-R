@@ -1,6 +1,6 @@
 #If skewness of the data lies between -1 and +1 then it is normal data, else it is skewed.
 #It is negatively skewed if the data leans towards left and positively skewed if vice versa.
-#Kurtosis shows the peak of standard deviation between data points and mean.
+#Kurtosis shows the peak of standard deviation between data points and mean, usually for normal data it lies between -3 and +3
 #(platykurtic - high peak,mesokurtic- mid peak, lepotokurtic- low or flat peak).
 # IMP: USE ~ TO SEPERATE NUMERIC AND CATEGORICAL (1 or more categories) for statistical functions, (use , if its seperate data)
 
